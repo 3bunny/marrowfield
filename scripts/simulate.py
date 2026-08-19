@@ -54,7 +54,7 @@ def step_river(w: dict, rng: random.Random) -> None:
     if r["flooded"]:
         # Floodwater recedes. Once it is back in its banks the valley is in
         # aftermath, not flood, and the ordinary events become available again.
-        r["level"] = max(40, r["level"] - 2)
+        r["level"] = max(40, r["level"] - 4)
         if r["level"] <= 48:
             r["flooded"] = False
             r["receded"] = True
@@ -291,7 +291,7 @@ event(
     id="after_flood_counting",
     once=True,
     phase=0,
-    requires=lambda w: w["river"]["flooded"],
+    requires=lambda w: w["river"]["flooded"] and "a_death_in_the_water" in w["fired"],
     weight=800,
     apply=lambda w: w["factions"]["reedfolk"].update(
         standing=w["factions"]["reedfolk"]["standing"] + 2
@@ -606,6 +606,368 @@ event(
         _s("Two crossings in one wide valley view at dusk, one stone and old, one timber and unfinished",
            "The Kiln's bridge has stood for two hundred years.",
            "Nobody mentions how long the new one will last."),
+    ],
+)
+
+
+# ---- mid-arc: the long wait before the water ----------------------------------
+
+event(
+    id="odd_refused_timber",
+    once=True,
+    phase=3,
+    requires=lambda w: living(w, "odd") and not w["river"]["flooded"],
+    weight=280,
+    apply=lambda w: (
+        w["factions"]["reedfolk"].update(grudge_kiln=w["factions"]["reedfolk"]["grudge_kiln"] + 1),
+        w["people"]["odd"].update(mood="hard"),
+    ),
+    scenes=lambda w: [
+        _s("A young man in patched clothes standing in the doorway of a well-built stone counting house, "
+           "cap in hand, warm light inside, grey light behind him",
+           "Odd Hallow asks the Kiln for timber. Forty lengths."),
+        _s("An older woman seated at a counting table not looking up from a ledger, quill still moving",
+           "He is not refused rudely. He is refused the way weather is refused —",
+           "as a thing nobody has the authority to change."),
+        _s("A muddy lane leading away from a stone building at dusk, one set of footprints, no people",
+           "He walks back the long way, past the ford,",
+           "and measures it again on the way."),
+    ],
+)
+
+event(
+    id="anneke_says_nothing",
+    once=True,
+    phase=5,
+    requires=lambda w: "record_altered" in person(w, "anneke")["knows"],
+    weight=260,
+    apply=lambda w: w["people"]["anneke"].update(mood="withheld"),
+    scenes=lambda w: [
+        _s("A grey-robed woman sitting alone at a long empty refectory table with a bowl in front of her, "
+           "cold light, untouched food",
+           "She has known for eleven days and told nobody."),
+        _s("Close crop of a hand resting on a closed ledger, candle guttering low",
+           "The Almoners have a procedure for an error in the record.",
+           "They have none at all for a lie in it."),
+        _s("An empty stone corridor with one door ajar and lamplight spilling out, no people",
+           "She writes nothing down. She is the archivist —",
+           "she knows exactly how long writing lasts."),
+    ],
+)
+
+event(
+    id="vesta_inspects_the_bridge",
+    once=True,
+    phase=7,
+    requires=lambda w: living(w, "vesta") and not w["river"]["flooded"],
+    weight=240,
+    apply=lambda w: w["people"]["vesta"]["knows"].append("bridge_is_sound"),
+    scenes=lambda w: [
+        _s("An older woman in good dark wool standing on a riverbank looking up at the underside of a "
+           "stone bridge arch, water running below",
+           "Vesta Marrow walks the bridge twice a year, and has for thirty-one."),
+        _s("Close crop of weathered stone voussoirs in a bridge arch, mortar sound, damp shadow",
+           "The stones are dry where they should be dry."),
+        _s("A stone bridge seen straight on from the bank, solid, empty, low sun",
+           "She writes 'sound' in the margin and means it.",
+           "The bridge was never going to be the thing that failed."),
+    ],
+)
+
+event(
+    id="reedfolk_meet_at_night",
+    once=True,
+    phase=9,
+    requires=lambda w: w["factions"]["reedfolk"]["grudge_kiln"] >= 5,
+    weight=300,
+    apply=lambda w: w["factions"]["reedfolk"].update(
+        standing=w["factions"]["reedfolk"]["standing"] + 1
+    ),
+    scenes=lambda w: [
+        _s("A low turf-roofed hut at night with lantern light showing through the door gaps, reeds around it",
+           "Eleven Reedfolk meet in Hallow's hut after the boats are in."),
+        _s("Interior of a crowded low hut, seated figures in wet wool, one lantern, faces indistinct",
+           "Nobody uses the word bridge. They talk about the ford,",
+           "and about how the ford is worse every year."),
+        _s("A dark reed bed under a clouded moon, still water, no people",
+           "It is not a decision. It is the first night",
+           "the thing was discussed without a Kiln man present."),
+    ],
+)
+
+event(
+    id="almoners_close_ranks",
+    once=True,
+    phase=11,
+    requires=lambda w: "two_hands_match" in person(w, "anneke")["knows"],
+    weight=320,
+    apply=lambda w: (
+        w["factions"]["almoners"].update(standing=w["factions"]["almoners"]["standing"] - 1),
+        w["people"]["anneke"].update(mood="alone"),
+    ),
+    scenes=lambda w: [
+        _s("A bare stone chapter room with a semicircle of grey-robed figures seated, one standing, "
+           "cold high windows, faces not readable",
+           "She brings it to the chapter on a Reeds-month morning."),
+        _s("Close crop of an old hand held up flat, palm out, in a gesture that stops something",
+           "She is heard. She is thanked. She is told the record",
+           "has been recopied four times since and is therefore settled."),
+        _s("A single grey-robed figure standing alone in an empty stone room after everyone has left",
+           "The order does not tell her she is wrong.",
+           "It tells her the question is closed, which is a different thing."),
+    ],
+)
+
+event(
+    id="river_watch_posted",
+    once=True,
+    phase=12,
+    requires=lambda w: w["river"]["level"] >= 54 and not w["river"]["flooded"],
+    weight=350,
+    apply=lambda w: w.setdefault("projects", {}).update(river_watch="posted"),
+    scenes=lambda w: [
+        _s("A notched wooden measuring post driven into a riverbank with water high against it, "
+           "reeds bent, overcast",
+           "The Vell is a hand higher than it was at the same time last year."),
+        _s("Two men sitting on a bank with a lantern between them at dusk, watching water, seen from behind",
+           "The Reedfolk post a watch without asking anyone."),
+        _s("A wide valley at night with one small lantern visible near the river, everything else dark",
+           "It is not that they know something the record does not.",
+           "It is that they have stopped believing the record is the thing to know."),
+    ],
+)
+
+# ---- inside the flood: the water is still up -----------------------------------
+
+event(
+    id="flood_salvage",
+    once=True,
+    phase=0,
+    requires=lambda w: w["river"]["flooded"],
+    weight=1500,
+    apply=lambda w: w["factions"]["reedfolk"].update(coin=max(0, w["factions"]["reedfolk"]["coin"] - 1)),
+    scenes=lambda w: [
+        _s("Figures wading chest-deep in brown floodwater between half-submerged huts, grey morning light",
+           "The water does not go down for nine days."),
+        _s("A flat-bottomed boat being poled between the tops of drowned reeds, sacks piled in it",
+           "What can be carried is carried to the chalk ridge."),
+        _s("A pile of wet salvaged belongings on a bare chalk hillside under low cloud, no people",
+           "The Reedfolk have done this three times in living memory.",
+           "They have never once done it early."),
+    ],
+)
+
+event(
+    id="kiln_shuts_the_bridge",
+    once=True,
+    phase=0,
+    requires=lambda w: (
+        w["river"]["flooded"]
+        and living(w, "vesta")
+        and "flood_salvage" in w["fired"]
+    ),
+    weight=650,
+    apply=lambda w: (
+        w["factions"]["reedfolk"].update(grudge_kiln=w["factions"]["reedfolk"]["grudge_kiln"] + 3),
+        w.update(tension=w["tension"] + 2),
+    ),
+    scenes=lambda w: [
+        _s("A stone bridge with water breaking against its parapet and a rough timber barrier across "
+           "the near end, nobody on it, spray",
+           "The Kiln closes the bridge on the second day. The stones are sound; the road is not."),
+        _s("A crowd of soaked people standing at a barrier looking across a bridge, seen from behind, "
+           "grey light, no faces",
+           "Forty Reedfolk stand at the barrier for most of an afternoon."),
+        _s("An older woman standing at a high window looking down at a river, seen from behind, dim room",
+           "Vesta Marrow gives the order and does not come down to explain it.",
+           "It is the correct order. It is remembered as something else."),
+    ],
+)
+
+event(
+    id="a_death_in_the_water",
+    once=True,
+    phase=6,
+    requires=lambda w: (
+        w["river"]["flooded"] and "kiln_shuts_the_bridge" in w["fired"]
+    ),
+    weight=500,
+    apply=lambda w: (
+        w.setdefault("deaths", []).append("a Reedfolk boy, fifteen"),
+        w["factions"]["reedfolk"].update(standing=w["factions"]["reedfolk"]["standing"] + 2),
+        w.update(tension=w["tension"] + 3),
+    ),
+    scenes=lambda w: [
+        _s("A swollen brown river running fast past flattened reeds under a low grey sky, no people",
+           "A boy goes into the water on the fourth day, after a boat."),
+        _s("An empty flat-bottomed boat caught against a half-drowned tree, rope trailing in the current",
+           "They find the boat that afternoon. They find him the next morning,"
+           " a mile down, in the reeds."),
+        _s("A small gathering of figures standing on a bare chalk slope above floodwater at dusk, distant",
+           "He was fifteen. The record said the flood was four years away.",
+           "Both of those facts are now permanent."),
+    ],
+)
+
+event(
+    id="anneke_publishes",
+    once=True,
+    phase=14,
+    requires=lambda w: (
+        "two_hands_match" in person(w, "anneke")["knows"]
+        and w["river"].get("receded")
+    ),
+    weight=600,
+    apply=lambda w: (
+        w["secrets"].update(published=True),
+        w["factions"]["almoners"].update(standing=w["factions"]["almoners"]["standing"] - 2),
+        w.update(tension=w["tension"] + 3),
+    ),
+    scenes=lambda w: [
+        _s("A grey-robed woman writing steadily at a desk by candlelight, a fresh sheet of rag paper, "
+           "an open ledger beside it",
+           "She writes it out plainly. One page. The altered entry, the four copies, the year."),
+        _s("A single sheet of handwritten paper nailed to a heavy wooden door, grey daylight, no people",
+           "She nails it to the chapter door, which is the only procedure",
+           "the order has ever had for a thing it will not discuss."),
+        _s("An empty stone corridor with a paper on a door at the far end, cold light, no people",
+           "Nobody takes it down.",
+           "That is how she learns the chapter already knew."),
+    ],
+)
+
+# ---- late arc: after the toll ---------------------------------------------------
+
+event(
+    id="the_bridge_is_named",
+    once=True,
+    phase=19,
+    requires=lambda w: w["projects"].get("second_bridge") == "building",
+    weight=380,
+    apply=lambda w: w["projects"].update(second_bridge_name="the Boy's Crossing"),
+    scenes=lambda w: [
+        _s("A half-finished timber bridge with five piles standing in shallow water, ropes and beams, "
+           "low sun, no workers",
+           "The second bridge is three quarters across by the Month of Chalk."),
+        _s("A rough plank fixed upright at the end of a timber bridge with a name cut into it, close crop, "
+           "no legible letters",
+           "Nobody proposes a name. It simply stops being called the new bridge."),
+        _s("Two crossings in one wide chalk valley at dusk, one stone and old, one timber and new",
+           "They call it the Boy's Crossing.",
+           "Nobody in Marrowfield needs to be told which boy."),
+    ],
+)
+
+event(
+    id="vesta_closes_the_ledger",
+    once=True,
+    phase=21,
+    requires=lambda w: w["projects"].get("toll") == "reduced" and living(w, "vesta"),
+    weight=420,
+    apply=lambda w: (
+        w["people"]["vesta"].update(role="no longer keeps the ledger", mood="finished"),
+        w.update(tension=w["tension"] + 1),
+    ),
+    scenes=lambda w: [
+        _s("A counting room with a ledger closed on the table and the brass weights put away in a box, "
+           "one lamp, no people",
+           "Vesta Marrow keeps the ledger for one more month, and closes it in the ordinary way."),
+        _s("An older woman handing a heavy leather ledger to a much younger woman, both hands on it, "
+           "dim stone room",
+           "She hands it to a woman of twenty-six who has never known a toll of more than half."),
+        _s("An empty chair at a counting table, ledger gone, weights boxed, cold light through a window",
+           "Thirty-two years. She was right about almost all of it.",
+           "She was wrong about the one thing she staked the valley on."),
+    ],
+)
+
+event(
+    id="the_record_recopied",
+    once=True,
+    phase=23,
+    requires=lambda w: (
+        w["secrets"].get("published")
+        and w["secrets"].get("confessed")
+        and living(w, "anneke")
+    ),
+    weight=450,
+    apply=lambda w: w["secrets"].update(record_corrected=True),
+    scenes=lambda w: [
+        _s("A cold stone archive with a fresh unbound ledger open on a lectern, blank ruled pages, "
+           "high window light",
+           "The flood record is begun again from the founding, in one hand, by one archivist."),
+        _s("Close crop of a page where a corrected year has been written with a marginal note beside it, "
+           "iron-gall ink, careful lettering",
+           "The altered entry is copied exactly as it was found,",
+           "with a note beneath it saying so."),
+        _s("A grey-robed figure seen from behind at a desk in a large archive, one candle, night",
+           "It will take her nine months.",
+           "It is the first flood record in Marrowfield that admits to being one."),
+    ],
+)
+
+
+# ---- coda: the chronicle closes -------------------------------------------------
+
+event(
+    id="bridge_completed",
+    once=True,
+    phase=24,
+    requires=lambda w: w["projects"].get("second_bridge_name"),
+    weight=500,
+    apply=lambda w: w["projects"].update(second_bridge="open"),
+    scenes=lambda w: [
+        _s("A finished timber bridge spanning a narrow river between chalk banks, raw new wood, "
+           "grey morning, no people",
+           "The last plank goes down on an unremarkable morning in the Rains."),
+        _s("Close crop of new sawn timber decking with wet footprints across it",
+           "There is no ceremony. Eleven people are there because they were working."),
+        _s("A wide chalk valley with two crossings visible, river between them, low cloud",
+           "It took a hundred and nine days from the first pile.",
+           "The Kiln's bridge took eleven years."),
+    ],
+)
+
+event(
+    id="first_crossing",
+    once=True,
+    phase=25,
+    requires=lambda w: w["projects"].get("second_bridge") == "open",
+    weight=520,
+    apply=lambda w: w["factions"]["reedfolk"].update(
+        coin=w["factions"]["reedfolk"]["coin"] + 3
+    ),
+    scenes=lambda w: [
+        _s("A loaded handcart being pushed across a new timber bridge, river below, grey daylight",
+           "The first thing across the Boy's Crossing is a cart of cut reeds."),
+        _s("An empty stone toll post beside an old bridge with nobody at it, mist",
+           "It goes to market and pays nothing, which is the entire point,"
+           " and is also somehow an anticlimax."),
+        _s("Two crossings in one valley seen from a chalk ridge at midday, both in use, small figures",
+           "By the Month of Chalk both bridges carry traffic",
+           "and nobody can remember arguing about it."),
+    ],
+)
+
+event(
+    id="the_chronicle_closes",
+    once=True,
+    phase=27,
+    requires=lambda w: (
+        "first_crossing" in w["fired"]
+        and w["secrets"].get("record_corrected")
+    ),
+    weight=900,
+    apply=lambda w: w.update(closed=True),
+    scenes=lambda w: [
+        _s("A pale chalk valley at dawn with a slow river winding through it, two bridges, mist on the "
+           "water, no people, wide and still",
+           "The river is back where it was. It will do this again in eleven years."),
+        _s("A single new ledger closed on a stone lectern in an empty archive, high window light",
+           "The record now says so, in a hand that signed it."),
+        _s("A wide valley at last light, two crossings dark against pale water, no people",
+           "Nothing here was decided by anyone who understood all of it.",
+           "That is the only part of the record that was never in doubt."),
     ],
 )
 
