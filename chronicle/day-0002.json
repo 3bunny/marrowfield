@@ -1,0 +1,36 @@
+{
+  "day": 2,
+  "date": "Day 2, Month of Reeds, Year 411",
+  "event": "odd_proposes_bridge",
+  "recurring": false,
+  "tension_before": 2,
+  "tension_after": 3,
+  "river_level": 50,
+  "days_to_flood": 44,
+  "flooded": false,
+  "scenes": [
+    {
+      "prompt": "A young man in patched fishing clothes standing on a muddy riverbank at low light, measuring the width of the water with a knotted rope, reeds bending. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "Odd Hallow has measured the Vell at eleven places."
+      ]
+    },
+    {
+      "prompt": "A crude drawing of a timber bridge scratched on a plank in charcoal, laid on wet grass. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "The narrowest crossing is upstream of the Kiln's bridge.",
+        "Forty feet. Timber would do it."
+      ]
+    },
+    {
+      "prompt": "A small gathering of fisherfolk outside a low turf-roofed hut at dusk, listening, no clear faces, lantern light. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "The Reedfolk listen politely.",
+        "Nobody says the obvious thing — that the Kiln would never allow it."
+      ]
+    }
+  ],
+  "eligible_count": 8,
+  "video_id": "90vEi9vm_vc",
+  "privacy": "private"
+}

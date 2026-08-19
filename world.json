@@ -1,19 +1,20 @@
 {
   "seed": "marrowfield-411",
-  "day": 1,
-  "tension": 2,
+  "day": 2,
+  "tension": 3,
   "fired": [
-    "anneke_finds_alteration"
+    "anneke_finds_alteration",
+    "odd_proposes_bridge"
   ],
   "calendar": {
-    "day": 1,
+    "day": 2,
     "month": "Reeds",
     "year": 411
   },
   "river": {
     "name": "Slow Vell",
-    "level": 51,
-    "days_to_flood": 45,
+    "level": 50,
+    "days_to_flood": 44,
     "flooded": false,
     "record_says_years_until": 7
   },
@@ -25,7 +26,7 @@
       "grudge_almoners": 0
     },
     "reedfolk": {
-      "standing": 3,
+      "standing": 4,
       "coin": 2,
       "grudge_kiln": 4,
       "grudge_almoners": 0
@@ -53,7 +54,7 @@
       "faction": "reedfolk",
       "role": "fisher, wants a second bridge",
       "alive": true,
-      "mood": "restless",
+      "mood": "stubborn",
       "knows": []
     },
     "anneke": {
@@ -75,7 +76,8 @@
   },
   "projects": {},
   "last_fired": {
-    "anneke_finds_alteration": 1
+    "anneke_finds_alteration": 1,
+    "odd_proposes_bridge": 2
   },
   "quiet_days": 0
 }
