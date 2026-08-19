@@ -1,7 +1,7 @@
 {
   "channel_name": "Marrowfield",
   "start_date": "2026-08-19",
-  "total_days": 90,
+  "total_days": 75,
   "provider": "cloudflare",
   "image_model": "@cf/black-forest-labs/flux-1-schnell",
   "image_params": { "steps": 8 },
