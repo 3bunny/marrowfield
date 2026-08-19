@@ -1,0 +1,53 @@
+{
+  "seed": "marrowfield-411",
+  "day": 0,
+  "tension": 0,
+  "fired": [],
+  "calendar": { "day": 0, "month": "Reeds", "year": 411 },
+  "river": {
+    "name": "Slow Vell",
+    "level": 52,
+    "days_to_flood": 46,
+    "flooded": false,
+    "record_says_years_until": 7
+  },
+  "factions": {
+    "kiln": { "standing": 6, "coin": 12, "grudge_reedfolk": 1, "grudge_almoners": 0 },
+    "reedfolk": { "standing": 3, "coin": 2, "grudge_kiln": 4, "grudge_almoners": 0 },
+    "almoners": { "standing": 5, "coin": 4, "grudge_kiln": 0, "grudge_reedfolk": 0 }
+  },
+  "people": {
+    "vesta": {
+      "name": "Vesta Marrow",
+      "age": 61,
+      "faction": "kiln",
+      "role": "keeps the Kiln's ledger",
+      "alive": true,
+      "mood": "steady",
+      "knows": []
+    },
+    "odd": {
+      "name": "Odd Hallow",
+      "age": 19,
+      "faction": "reedfolk",
+      "role": "fisher, wants a second bridge",
+      "alive": true,
+      "mood": "restless",
+      "knows": []
+    },
+    "anneke": {
+      "name": "Sister Anneke",
+      "age": 44,
+      "faction": "almoners",
+      "role": "archivist of the flood record",
+      "alive": true,
+      "mood": "careful",
+      "knows": []
+    }
+  },
+  "secrets": {
+    "record_altered": true,
+    "altered_by": "an Almoner appointed in 402",
+    "forger_known": false
+  }
+}
