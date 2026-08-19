@@ -46,7 +46,7 @@ jobs:
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           YT_PRIVACY: ${{ vars.YT_PRIVACY || 'private' }}
           SKIP_UPLOAD: ${{ inputs.skip_upload && '1' || '0' }}
-        run: python scripts/run_day.py
+        run: python scripts/run_day.py || (echo "retry in 60s" && sleep 60 && python scripts/run_day.py) || (echo "retry in 240s" && sleep 240 && python scripts/run_day.py)
 
       - name: Commit the day
         run: |
