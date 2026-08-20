@@ -1,20 +1,21 @@
 {
   "seed": "marrowfield-411",
-  "day": 2,
-  "tension": 3,
+  "day": 3,
+  "tension": 4,
   "fired": [
     "anneke_finds_alteration",
-    "odd_proposes_bridge"
+    "odd_proposes_bridge",
+    "anneke_checks_second_ledger"
   ],
   "calendar": {
-    "day": 2,
+    "day": 3,
     "month": "Reeds",
     "year": 411
   },
   "river": {
     "name": "Slow Vell",
-    "level": 50,
-    "days_to_flood": 44,
+    "level": 51,
+    "days_to_flood": 43,
     "flooded": false,
     "record_says_years_until": 7
   },
@@ -65,7 +66,8 @@
       "alive": true,
       "mood": "careful",
       "knows": [
-        "record_altered"
+        "record_altered",
+        "two_hands_match"
       ]
     }
   },
@@ -77,7 +79,8 @@
   "projects": {},
   "last_fired": {
     "anneke_finds_alteration": 1,
-    "odd_proposes_bridge": 2
+    "odd_proposes_bridge": 2,
+    "anneke_checks_second_ledger": 3
   },
   "quiet_days": 0
 }

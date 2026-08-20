@@ -1,0 +1,36 @@
+{
+  "day": 3,
+  "date": "Day 3, Month of Reeds, Year 411",
+  "event": "anneke_checks_second_ledger",
+  "recurring": false,
+  "tension_before": 3,
+  "tension_after": 4,
+  "river_level": 51,
+  "days_to_flood": 43,
+  "flooded": false,
+  "scenes": [
+    {
+      "prompt": "Rows of leather-bound ledgers on stone shelves, one pulled out and open on a lectern, cold light from a high window. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "There are four copies of the record. The Almoners are not careless."
+      ]
+    },
+    {
+      "prompt": "Two open ledger pages side by side under candlelight, the handwriting subtly different, close crop on the ink. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "Three of them agree with each other.",
+        "The fourth is the one the Kiln was shown."
+      ]
+    },
+    {
+      "prompt": "A grey-robed woman's hands resting flat on a closed ledger, knuckles pale, no face visible. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "So it was not an error of copying.",
+        "It was done once, carefully, for someone to read."
+      ]
+    }
+  ],
+  "eligible_count": 8,
+  "video_id": "Jotm1vwwxfo",
+  "privacy": "private"
+}
