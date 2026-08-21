@@ -1,28 +1,29 @@
 {
   "seed": "marrowfield-411",
-  "day": 3,
+  "day": 4,
   "tension": 4,
   "fired": [
     "anneke_finds_alteration",
     "odd_proposes_bridge",
-    "anneke_checks_second_ledger"
+    "anneke_checks_second_ledger",
+    "vesta_reads_the_toll"
   ],
   "calendar": {
-    "day": 3,
+    "day": 4,
     "month": "Reeds",
     "year": 411
   },
   "river": {
     "name": "Slow Vell",
-    "level": 51,
-    "days_to_flood": 43,
+    "level": 50,
+    "days_to_flood": 42,
     "flooded": false,
     "record_says_years_until": 7
   },
   "factions": {
     "kiln": {
       "standing": 6,
-      "coin": 12,
+      "coin": 14,
       "grudge_reedfolk": 1,
       "grudge_almoners": 0
     },
@@ -47,7 +48,9 @@
       "role": "keeps the Kiln's ledger",
       "alive": true,
       "mood": "steady",
-      "knows": []
+      "knows": [
+        "toll_is_everything"
+      ]
     },
     "odd": {
       "name": "Odd Hallow",
@@ -80,7 +83,8 @@
   "last_fired": {
     "anneke_finds_alteration": 1,
     "odd_proposes_bridge": 2,
-    "anneke_checks_second_ledger": 3
+    "anneke_checks_second_ledger": 3,
+    "vesta_reads_the_toll": 4
   },
   "quiet_days": 0
 }

@@ -1,0 +1,36 @@
+{
+  "day": 4,
+  "date": "Day 4, Month of Reeds, Year 411",
+  "event": "vesta_reads_the_toll",
+  "recurring": false,
+  "tension_before": 4,
+  "tension_after": 4,
+  "river_level": 50,
+  "days_to_flood": 42,
+  "flooded": false,
+  "scenes": [
+    {
+      "prompt": "An older woman in good dark wool at a counting table, brass weights and stacked coin, a ledger open, warm lamplight in a stone room. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "Vesta Marrow has kept the Kiln's ledger for thirty-one years."
+      ]
+    },
+    {
+      "prompt": "Close-up of a column of figures in neat handwriting, coins beside it, shallow depth of field. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "Two thirds of everything the Kiln has ever earned",
+        "came across that bridge one cart at a time."
+      ]
+    },
+    {
+      "prompt": "A stone bridge seen from below at the waterline, carts crossing above, river running fast. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "She does not think of it as a toll.",
+        "She thinks of it as the only thing holding the valley in one piece."
+      ]
+    }
+  ],
+  "eligible_count": 8,
+  "video_id": "m3FXz0exN5Q",
+  "privacy": "private"
+}
