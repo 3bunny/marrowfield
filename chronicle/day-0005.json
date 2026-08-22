@@ -1,0 +1,35 @@
+{
+  "day": 5,
+  "date": "Day 5, Month of Reeds, Year 411",
+  "event": "rumour_reaches_kiln",
+  "recurring": false,
+  "tension_before": 4,
+  "tension_after": 6,
+  "river_level": 50,
+  "days_to_flood": 41,
+  "flooded": false,
+  "scenes": [
+    {
+      "prompt": "Two women talking quietly at a market stall of grey pottery, heads close, other shoppers indistinct behind them. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "It takes nine days for the rumour to cross the bridge."
+      ]
+    },
+    {
+      "prompt": "An older woman standing motionless in a doorway holding a ledger against her chest, lamplight behind her, expression not visible. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "Vesta hears it from a woman buying two bowls."
+      ]
+    },
+    {
+      "prompt": "Night. A stone room, a ledger open on a table, a hand holding a candle very close to the page. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "That night she reads her own copy of the flood record",
+        "for the first time in eleven years."
+      ]
+    }
+  ],
+  "eligible_count": 7,
+  "video_id": "VbHPF_9qflY",
+  "privacy": "private"
+}

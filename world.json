@@ -1,22 +1,23 @@
 {
   "seed": "marrowfield-411",
-  "day": 4,
-  "tension": 4,
+  "day": 5,
+  "tension": 6,
   "fired": [
     "anneke_finds_alteration",
     "odd_proposes_bridge",
     "anneke_checks_second_ledger",
-    "vesta_reads_the_toll"
+    "vesta_reads_the_toll",
+    "rumour_reaches_kiln"
   ],
   "calendar": {
-    "day": 4,
+    "day": 5,
     "month": "Reeds",
     "year": 411
   },
   "river": {
     "name": "Slow Vell",
     "level": 50,
-    "days_to_flood": 42,
+    "days_to_flood": 41,
     "flooded": false,
     "record_says_years_until": 7
   },
@@ -25,7 +26,7 @@
       "standing": 6,
       "coin": 14,
       "grudge_reedfolk": 1,
-      "grudge_almoners": 0
+      "grudge_almoners": 2
     },
     "reedfolk": {
       "standing": 4,
@@ -49,7 +50,8 @@
       "alive": true,
       "mood": "steady",
       "knows": [
-        "toll_is_everything"
+        "toll_is_everything",
+        "record_questioned"
       ]
     },
     "odd": {
@@ -84,7 +86,8 @@
     "anneke_finds_alteration": 1,
     "odd_proposes_bridge": 2,
     "anneke_checks_second_ledger": 3,
-    "vesta_reads_the_toll": 4
+    "vesta_reads_the_toll": 4,
+    "rumour_reaches_kiln": 5
   },
   "quiet_days": 0
 }
