@@ -1,0 +1,36 @@
+{
+  "day": 6,
+  "date": "Day 6, Month of Reeds, Year 411",
+  "event": "anneke_says_nothing",
+  "recurring": false,
+  "tension_before": 6,
+  "tension_after": 6,
+  "river_level": 50,
+  "days_to_flood": 40,
+  "flooded": false,
+  "scenes": [
+    {
+      "prompt": "A grey-robed woman sitting alone at a long empty refectory table with a bowl in front of her, cold light, untouched food. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "She has known for eleven days and told nobody."
+      ]
+    },
+    {
+      "prompt": "Close crop of a hand resting on a closed ledger, candle guttering low. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "The Almoners have a procedure for an error in the record.",
+        "They have none at all for a lie in it."
+      ]
+    },
+    {
+      "prompt": "An empty stone corridor with one door ajar and lamplight spilling out, no people. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "She writes nothing down. She is the archivist —",
+        "she knows exactly how long writing lasts."
+      ]
+    }
+  ],
+  "eligible_count": 7,
+  "video_id": "d35Gog-firY",
+  "privacy": "private"
+}
