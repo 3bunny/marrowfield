@@ -1,0 +1,36 @@
+{
+  "day": 7,
+  "date": "Day 7, Month of Reeds, Year 411",
+  "event": "odd_refused_timber",
+  "recurring": false,
+  "tension_before": 6,
+  "tension_after": 6,
+  "river_level": 50,
+  "days_to_flood": 39,
+  "flooded": false,
+  "scenes": [
+    {
+      "prompt": "A young man in patched clothes standing in the doorway of a well-built stone counting house, cap in hand, warm light inside, grey light behind him. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "Odd Hallow asks the Kiln for timber. Forty lengths."
+      ]
+    },
+    {
+      "prompt": "An older woman seated at a counting table not looking up from a ledger, quill still moving. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "He is not refused rudely. He is refused the way weather is refused —",
+        "as a thing nobody has the authority to change."
+      ]
+    },
+    {
+      "prompt": "A muddy lane leading away from a stone building at dusk, one set of footprints, no people. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "He walks back the long way, past the ford,",
+        "and measures it again on the way."
+      ]
+    }
+  ],
+  "eligible_count": 6,
+  "video_id": "pHZ2m_5amoc",
+  "privacy": "private"
+}

@@ -1,6 +1,6 @@
 {
   "seed": "marrowfield-411",
-  "day": 6,
+  "day": 7,
   "tension": 6,
   "fired": [
     "anneke_finds_alteration",
@@ -8,17 +8,18 @@
     "anneke_checks_second_ledger",
     "vesta_reads_the_toll",
     "rumour_reaches_kiln",
-    "anneke_says_nothing"
+    "anneke_says_nothing",
+    "odd_refused_timber"
   ],
   "calendar": {
-    "day": 6,
+    "day": 7,
     "month": "Reeds",
     "year": 411
   },
   "river": {
     "name": "Slow Vell",
     "level": 50,
-    "days_to_flood": 40,
+    "days_to_flood": 39,
     "flooded": false,
     "record_says_years_until": 7
   },
@@ -32,7 +33,7 @@
     "reedfolk": {
       "standing": 4,
       "coin": 2,
-      "grudge_kiln": 4,
+      "grudge_kiln": 5,
       "grudge_almoners": 0
     },
     "almoners": {
@@ -61,7 +62,7 @@
       "faction": "reedfolk",
       "role": "fisher, wants a second bridge",
       "alive": true,
-      "mood": "stubborn",
+      "mood": "hard",
       "knows": []
     },
     "anneke": {
@@ -89,7 +90,8 @@
     "anneke_checks_second_ledger": 3,
     "vesta_reads_the_toll": 4,
     "rumour_reaches_kiln": 5,
-    "anneke_says_nothing": 6
+    "anneke_says_nothing": 6,
+    "odd_refused_timber": 7
   },
   "quiet_days": 0
 }
