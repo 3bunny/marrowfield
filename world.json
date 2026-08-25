@@ -1,6 +1,6 @@
 {
   "seed": "marrowfield-411",
-  "day": 7,
+  "day": 8,
   "tension": 6,
   "fired": [
     "anneke_finds_alteration",
@@ -9,17 +9,18 @@
     "vesta_reads_the_toll",
     "rumour_reaches_kiln",
     "anneke_says_nothing",
-    "odd_refused_timber"
+    "odd_refused_timber",
+    "texture_market_day"
   ],
   "calendar": {
-    "day": 7,
+    "day": 8,
     "month": "Reeds",
     "year": 411
   },
   "river": {
     "name": "Slow Vell",
     "level": 50,
-    "days_to_flood": 39,
+    "days_to_flood": 38,
     "flooded": false,
     "record_says_years_until": 7
   },
@@ -91,7 +92,8 @@
     "vesta_reads_the_toll": 4,
     "rumour_reaches_kiln": 5,
     "anneke_says_nothing": 6,
-    "odd_refused_timber": 7
+    "odd_refused_timber": 7,
+    "texture_market_day": 8
   },
-  "quiet_days": 0
+  "quiet_days": 1
 }

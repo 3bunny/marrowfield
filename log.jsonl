@@ -5,3 +5,4 @@
 {"day": 5, "generated_at": "2026-08-23T08:23:16.875468+09:00", "event": "rumour_reaches_kiln", "recurring": false, "river_level": 50, "tension": 6, "video_id": "VbHPF_9qflY"}
 {"day": 6, "generated_at": "2026-08-24T08:23:48.855534+09:00", "event": "anneke_says_nothing", "recurring": false, "river_level": 50, "tension": 6, "video_id": "d35Gog-firY"}
 {"day": 7, "generated_at": "2026-08-25T08:24:57.976735+09:00", "event": "odd_refused_timber", "recurring": false, "river_level": 50, "tension": 6, "video_id": "pHZ2m_5amoc"}
+{"day": 8, "generated_at": "2026-08-26T08:26:57.910222+09:00", "event": "texture_market_day", "recurring": true, "river_level": 50, "tension": 6, "video_id": "2UMLpGyqu04"}

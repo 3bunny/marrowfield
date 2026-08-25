@@ -1,0 +1,35 @@
+{
+  "day": 8,
+  "date": "Day 8, Month of Reeds, Year 411",
+  "event": "texture_market_day",
+  "recurring": true,
+  "tension_before": 6,
+  "tension_after": 6,
+  "river_level": 50,
+  "days_to_flood": 38,
+  "flooded": false,
+  "scenes": [
+    {
+      "prompt": "A small muddy market square with grey pottery laid on cloth, overcast, indistinct figures. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "Market is on the Kiln's side of the river."
+      ]
+    },
+    {
+      "prompt": "Baskets of cut reeds and river fish beside stacked pots, wet ground. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "The Reedfolk come across, pay the toll, and sell at the Kiln's prices."
+      ]
+    },
+    {
+      "prompt": "An empty market square at the end of day, trampled mud, one abandoned basket, low light. oil painting, visible brushwork, muted ochre and grey-green palette, soft overcast northern light, painterly, no text, no lettering",
+      "lines": [
+        "They have done this for six generations",
+        "and called it trade."
+      ]
+    }
+  ],
+  "eligible_count": 5,
+  "video_id": "2UMLpGyqu04",
+  "privacy": "private"
+}
